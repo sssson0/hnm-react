@@ -1,13 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = ({item}) => {
+    const navigate = useNavigate()
+    const showDetail=()=>{
+        navigate(`/product/${item.id}`)
+    }
   return (
-    <div>
-      <img width={100} src='https://assets.turbologo.com/blog/en/2021/07/07045753/hm-symbol-logo.png'/>
-      <div>choice</div>
-      <div>title</div>
-      <div>99999won</div>
-      <div>new</div>
+    <div className='card-area' onClick={showDetail}>
+      <img className='card-img' width={300} height={400} src={item?.img}/>
+      <div>{item?.choice ==true?"CHOICE!":""}</div>
+      <div>{item?.title}</div>
+      <div>{item?.price}</div>
+      <div>{item?.new ==true?"NEW!":""}</div>
     </div>
   );
 }

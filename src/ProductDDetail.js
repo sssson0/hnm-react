@@ -1,10 +1,34 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
+import { Container,Row,Col } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+
 
 const ProductDDetail = () => {
+    let { id } = useParams()
+    const [product,setProduct]=useState(null)
+        const getProductDetail=async()=>{
+            let url =`http://localhost:5000/products/${id}`
+            let response =await fetch(url)
+            let data =await response.json()
+            setProduct(data)
+        }
+    useEffect(()=>{
+        getProductDetail()
+        
+
+    },[])
   return (
-    <div>
-      DDD
-    </div>
+    <Container>
+        <Row>
+        <Col className='product-img'>
+            <img width={400} src={product?.img}/>
+        </Col>
+        <Col className='product-detail-card'>
+            <div>{product?.title}</div>
+            <div>{product?.price}</div>
+        </Col>
+        </Row>
+    </Container>
   );
 }
 
