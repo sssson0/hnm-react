@@ -26,6 +26,8 @@ const ProductDDetail = () => {
         <Col className='product-detail-card'>
             <div>{product?.title}</div>
             <div>{product?.price}</div>
+            <div>S M L</div>
+            <div>구매하기</div>
         </Col>
         </Row>
     </Container>

@@ -12,11 +12,11 @@ import PrivateRoute from './route/PrivateRoute';
 function App() {
   const [authenticate,setAuthenticate]=useState(false)
   useEffect(()=>{
-    
+    console.log(`현재 로그인 상태 : ${authenticate}`)
   },[authenticate])
 
   return (
-    <div className='bbbb'>
+    <div>
       <Navbar/>
       <Routes>
     <Route path='/' element={<ProductAll/>}/>
