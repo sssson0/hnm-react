@@ -10,7 +10,7 @@ const Login = ({setAuthenticate,to}) => {
         navigate("/")
     }
   return (
-    <Container>
+    <Container className='CC'>
 
     <Form className='form-area' onSubmit={(event)=>loginUser(event)}>
       <Form.Group className="mb-3" controlId="formBasicEmail">

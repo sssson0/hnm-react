@@ -88,7 +88,6 @@ color: white;
   }
 .form-area{
     width: 40%;
-    margin-left: 400px;
     margin-top: 60px;
     color: white;
 }
@@ -112,8 +111,16 @@ color: white;
     .burger-menu{
         display: flex;
     }
+    .menu-area{
+        display: none;
+    }
+    
   }
-  
+.CC{
+    display: flex;
+    justify-content: center
+    
+  }
   .side-menu {
     height: 100%;
     width: 250px;
